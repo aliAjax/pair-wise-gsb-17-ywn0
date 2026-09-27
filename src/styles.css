@@ -260,6 +260,395 @@ input {
   line-height: 1.6;
 }
 
+/* ---- 成井验收台 ---- */
+
+.status-chip {
+  display: inline-block;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.st-frozen {
+  color: #0f766e;
+  background: color-mix(in srgb, #0f766e 12%, #ffffff);
+  border: 1px solid color-mix(in srgb, #0f766e 35%, #ffffff);
+}
+
+.st-ready {
+  color: #2563eb;
+  background: color-mix(in srgb, #2563eb 10%, #ffffff);
+  border: 1px solid color-mix(in srgb, #2563eb 30%, #ffffff);
+}
+
+.st-pending {
+  color: #b45309;
+  background: color-mix(in srgb, #b45309 10%, #ffffff);
+  border: 1px solid color-mix(in srgb, #b45309 30%, #ffffff);
+}
+
+.st-none {
+  color: #64748b;
+  background: #f1f5f9;
+  border: 1px solid var(--border);
+}
+
+.borehole-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.borehole-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 10px;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.borehole-item strong {
+  font-size: 15px;
+}
+
+.borehole-item span {
+  grid-column: 1;
+  color: #64748b;
+  font-size: 12.5px;
+}
+
+.borehole-item .status-chip {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin-left: 0;
+}
+
+.borehole-item.active {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 7%, #ffffff);
+}
+
+.threshold-box {
+  border: 1px dashed color-mix(in srgb, var(--accent) 45%, #dbe3ef);
+  background: color-mix(in srgb, var(--accent) 6%, #ffffff);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.threshold-box h3 {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--accent);
+}
+
+.threshold-box p {
+  margin: 0;
+  font-size: 13px;
+  color: #526070;
+  line-height: 1.7;
+}
+
+.action-row {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.freeze-action {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.frozen-banner {
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, #dbe3ef);
+  background: color-mix(in srgb, var(--accent) 8%, #ffffff);
+  color: #0f5250;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+}
+
+.form-columns {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  gap: 24px;
+  align-items: start;
+}
+
+.form-group {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.form-group:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.form-group h3,
+.issue-panel h3 {
+  font-size: 14px;
+  margin: 0;
+  color: #334155;
+}
+
+.depth-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.reading-row {
+  grid-template-columns: 1fr 1fr auto;
+  align-items: end;
+}
+
+.reading-chip {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.rc-ok {
+  color: #0f766e;
+  background: color-mix(in srgb, #0f766e 12%, #ffffff);
+}
+
+.rc-bad {
+  color: #e11d48;
+  background: color-mix(in srgb, #e11d48 10%, #ffffff);
+}
+
+.rc-wait {
+  color: #64748b;
+  background: #f1f5f9;
+}
+
+.form-side {
+  display: grid;
+  gap: 16px;
+}
+
+.well-diagram {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fbfdff;
+  padding: 10px;
+}
+
+.well-diagram svg {
+  width: 100%;
+  display: block;
+}
+
+.well-diagram figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #526070;
+}
+
+.well-diagram figcaption span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.well-diagram figcaption i {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+}
+
+.issue-panel {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  background: #fbfdff;
+}
+
+.issue-list {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.issue-list li {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 8px;
+  font-size: 13px;
+  align-items: start;
+}
+
+.issue-list li b {
+  font-size: 14px;
+}
+
+.issue-list li.ok b {
+  color: var(--accent);
+}
+
+.issue-list li.bad b {
+  color: #e11d48;
+}
+
+.issue-list li span {
+  display: block;
+  color: #172033;
+  font-weight: 500;
+}
+
+.issue-list li small {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.dev-summary {
+  margin: 0;
+  font-size: 13px;
+  color: #b45309;
+}
+
+.dev-summary.ok {
+  color: var(--accent);
+}
+
+.well-card {
+  display: block;
+}
+
+.well-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.well-card-head h3 {
+  margin: 0;
+}
+
+.well-card-head .status-chip {
+  margin-left: 0;
+}
+
+.version-tag {
+  color: #64748b;
+  font-size: 12.5px;
+}
+
+.link-btn {
+  margin-left: auto;
+  min-height: 30px;
+  padding: 0 10px;
+  font-size: 13px;
+  color: var(--warn);
+  border-color: color-mix(in srgb, var(--warn) 35%, #dbe3ef);
+}
+
+.well-meta {
+  font-size: 13.5px;
+  margin-bottom: 6px;
+}
+
+.fail-list {
+  list-style: none;
+  margin: 0 0 6px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: color-mix(in srgb, #e11d48 7%, #ffffff);
+  color: #be123c;
+  font-size: 13px;
+  display: grid;
+  gap: 4px;
+}
+
+.pass-line {
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.version-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 8px 0 0;
+  border-top: 1px dashed var(--border);
+  display: grid;
+  gap: 4px;
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.reopen-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.reopen-row input {
+  min-height: 38px;
+}
+
+@media (max-width: 1080px) {
+  .form-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .form-side {
+    grid-template-columns: minmax(220px, 280px) 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .workspace,
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-grid,
+  .form-side,
+  .depth-pair,
+  .reading-row {
+    grid-template-columns: 1fr;
+  }
+
+  .reading-chip {
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: 860px) {
   .hero,
   .workspace,
